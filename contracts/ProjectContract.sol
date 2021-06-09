@@ -21,12 +21,12 @@ contract ProjectContract is ERC721, AccessControl, ProjectContractStorages {
     constructor(
         uint8 projectId,
         address bidder,  /// [Note]: A bidder is also a contract owner.
-        string memory contractName, 
+        string memory contractName,
         string memory contractSymbol,
         string memory contractIpfsHash
-    ) 
-        public 
-        ERC721(contractName, contractSymbol) 
+    )
+        public
+        ERC721(contractName, contractSymbol)
     {
         /// Mint a NFT and register a contract
         mintContract(projectId, bidder, contractIpfsHash);
@@ -38,7 +38,7 @@ contract ProjectContract is ERC721, AccessControl, ProjectContractStorages {
 
         /// Mint a new contract
         _mint(bidder, newContractId);
-        _setTokenURI(newContractId, contractIpfsHash); 
+        _setTokenURI(newContractId, contractIpfsHash);
 
         /// A contract is associated with project ID
         ContractAgreement storage contractAgreement = contractAgreements[projectId][newContractId];

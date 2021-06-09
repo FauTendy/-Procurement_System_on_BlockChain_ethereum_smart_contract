@@ -26,7 +26,7 @@ contract ProjectManagement is AccessControl {
 
     /***
      * @notice - Create a new project with a NFT
-     * @notice - Usually, project admin is government who conduct a tender. 
+     * @notice - Usually, project admin is government who conduct a tender.
      **/
     function createProject(address projectAdmin, address bidder, string memory contractName, string memory contractSymbol, string memory contractIpfsHash) public returns (uint8 _newProjectId) {
         uint8 newProjectId = getNextProjectId();
